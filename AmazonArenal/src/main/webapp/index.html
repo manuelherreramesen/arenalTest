@@ -1,26 +1,58 @@
 <html>
-<head>
-    <title>Hello jQuery</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="application/javascript">
+<title>Hello jQuery</title>
 
-        $(document).ready(function () {
-            $.ajax({
-                url: "http://localhost:8080/listBuckets"
-            }).then(function (data) {
-                //$('.greeting-id').append(data.id);
-                console.log(data[0]);
-                $('.bucket-content').append(JSON.stringify(data[0], undefined, 2));
+<script src="/lib/jquery-1.11.0.min.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<link href="/styles/bootstrap.min.css" rel="stylesheet"/>
+
+<script type="application/javascript">
+
+    $(document).ready(function () {
+        $.ajax({
+            url: "/listBuckets"
+        }).then(function (data) {
+            if ($("#productTable tbody").length == 0) {
+                $("#productTable").append("<tbody></tbody>");
+            }
+
+            data.map(data => {
+                var creationDate = new Date(data.creationDate);
+                $("#productTable tbody").append(
+                    `<tr>
+                    <td> <a href='/bucket/${data.name}'> ${data.name}</a></td> +
+                    <td> ${data.owner.displayName} </td>
+                    <td> ${creationDate.toString()} </td>
+                    </tr>`
+                );
             });
         });
+    });
 
-    </script>
+</script>
 </head>
 
 <body>
-<div>
-    <p class="buckets">Buckets</p>
-    <p class="bucket-content"></p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Buckets</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <table id="productTable"
+                   class="table table-bordered table-condensed table-striped">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Owner</th>
+                    <th>Creation Date</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
 </div>
+
 </body>
 </html>

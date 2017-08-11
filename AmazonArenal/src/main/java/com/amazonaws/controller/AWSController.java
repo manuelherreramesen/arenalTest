@@ -18,7 +18,7 @@ public class AWSController {
     }
 
     @GetMapping(value = "/bucket/{bucketName}", produces = "application/json")
-    public List<S3ObjectSummary> getCustomer(@PathVariable("bucketName") String bucketName) {
+    public List<S3ObjectSummary> getFiles(@PathVariable("bucketName") String bucketName) {
 
         return AmazonS3Service.getInstance().listObjects(bucketName);
     }
