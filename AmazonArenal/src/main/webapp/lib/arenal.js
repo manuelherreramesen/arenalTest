@@ -1,11 +1,5 @@
 $(document).ready(function () {
-    $('#productTable tbody').loading();
-
-    $.ajax({
-        url: "/listBuckets"
-    }).then(function (data) {
-        loadBuckets(data)
-    });
+    init();
 });
 
 
@@ -33,8 +27,6 @@ function loadBuckets(data) {
                 </tr>`
         );
     }
-
-    $('#productTable tbody').loading('stop');
 };
 
 
@@ -98,6 +90,20 @@ function loadModalObject(bucketName, key) {
         $('#objectModal').loading('stop');
     });
 }
+
+function init() {
+    $('#objectModal').on('hidden.bs.modal', function () {
+        $('video').trigger('pause');
+    });
+
+    $('#productTable tbody').loading();
+
+    $.ajax({
+        url: "/listBuckets"
+    }).then(function (data) {
+        loadBuckets(data)
+    }).always(() => $('#productTable tbody').loading('stop'))
+};
 
 
 
