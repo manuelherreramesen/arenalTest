@@ -37,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AWSController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AWSController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/controller/AWSController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -51,13 +51,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+            <state relative-caret-position="503">
+              <caret line="53" column="35" lean-forward="true" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
               <folding>
-                <element signature="e#2225#2232#1" expanded="true" />
+                <element signature="e#2234#2241#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,8 +154,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/styles/arenal.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/service/AmazonS3Service.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/lib/arenal.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/controller/AWSController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
       </list>
     </option>
   </component>
@@ -533,12 +533,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1502406964706</updated>
-      <workItem from="1502406967976" duration="31095000" />
+      <workItem from="1502406967976" duration="31314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31095000" />
+    <option name="totallyTimeSpent" value="31314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="896" extended-state="6" />
@@ -814,16 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
-          <folding>
-            <element signature="e#2225#2232#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/service/AmazonS3Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="710">
@@ -845,6 +835,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/controller/AWSController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="56" lean-forward="true" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/lib/arenal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
@@ -861,14 +863,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/controller/AWSController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="56" lean-forward="true" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+        <state relative-caret-position="503">
+          <caret line="53" column="35" lean-forward="true" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#2234#2241#1" expanded="true" />
           </folding>
         </state>
       </provider>
