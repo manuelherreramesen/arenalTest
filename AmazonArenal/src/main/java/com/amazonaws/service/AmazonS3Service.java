@@ -11,6 +11,7 @@ import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 import java.io.ByteArrayInputStream;
@@ -59,6 +60,10 @@ public final class AmazonS3Service {
     public List<S3ObjectSummary> listObjects(String bucketName) {
         return s3client.listObjects(new ListObjectsRequest()
                 .withBucketName(bucketName)).getObjectSummaries();
+    }
+
+    public String getDataFromObject(String bucketName, String key) {
+        return s3client.getObject(bucketName, key).getObjectContent().getHttpRequest().getURI().toString();
     }
 
 

@@ -1,34 +1,14 @@
 <html>
-<title>Hello jQuery</title>
+<title>AWS Example Buckets</title>
 
 <script src="/lib/jquery-1.11.0.min.js"></script>
 <script src="/lib/bootstrap.min.js"></script>
+<script src="/lib/jquery.loading.min.js"></script>
+<script src="/lib/arenal.js"></script>
+
 <link href="/styles/bootstrap.min.css" rel="stylesheet"/>
+<link href="/styles/jquery.loading.min.css" rel="stylesheet"/>
 
-<script type="application/javascript">
-
-    $(document).ready(function () {
-        $.ajax({
-            url: "/listBuckets"
-        }).then(function (data) {
-            if ($("#productTable tbody").length == 0) {
-                $("#productTable").append("<tbody></tbody>");
-            }
-
-            data.map(data => {
-                var creationDate = new Date(data.creationDate);
-                $("#productTable tbody").append(
-                    `<tr>
-                    <td> <a href='/bucket/${data.name}'> ${data.name}</a></td> +
-                    <td> ${data.owner.displayName} </td>
-                    <td> ${creationDate.toString()} </td>
-                    </tr>`
-                );
-            });
-        });
-    });
-
-</script>
 </head>
 
 <body>
@@ -49,10 +29,55 @@
                     <th>Creation Date</th>
                 </tr>
                 </thead>
+                <tbody>
+                <tr>
+                    <td colspan="3"> No Data</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Bucket Chosen</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <table id="objectTable"
+                   class="table table-bordered table-condensed table-striped">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Bucket</th>
+                    <th>Creation Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="3"> No Data</td>
+                </tr>
+                </tbody>
             </table>
         </div>
     </div>
 </div>
 
+<div class="modal fade" id="objectModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body text-center">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 </body>
 </html>
