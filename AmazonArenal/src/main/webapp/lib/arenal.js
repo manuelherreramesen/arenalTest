@@ -75,6 +75,7 @@ function loadModalObject(bucketName, key) {
 
             modalBody.append(
                 `<h3>${key}</h3>`);
+
             if (data.indexOf(".png") > -1) {
                 modalBody.append(`<img src="${data}" height="300" width="500"/>`);
             } else {

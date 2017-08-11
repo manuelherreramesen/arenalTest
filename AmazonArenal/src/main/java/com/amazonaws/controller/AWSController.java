@@ -1,7 +1,6 @@
 package com.amazonaws.controller;
 
 import com.amazonaws.service.AmazonS3Service;
-import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
