@@ -1,5 +1,7 @@
-*/target/*
+*/target/**
 */.idea/*
+.project
+.classpath
 
 # Compiled source #
 ###################
