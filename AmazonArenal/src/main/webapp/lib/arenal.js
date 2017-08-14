@@ -3,6 +3,37 @@ $(document).ready(function () {
 });
 
 
+function removeBucket() {
+    $(document).on ("click", ".clicked",function() {
+		var bucketName = $(this).closest("tr").find(".bn").text().trim();
+		$.ajax({
+			url : "/removeBucket/" + bucketName,
+			success: function(){
+				location.reload(); // then reload the page
+			}
+		});
+	});
+};
+
+
+function createBucket() {
+	   $("#modalNewBucket").modal('show');
+	   $("#modalNewBucketForm").submit(function (event) {
+		   var bucketName = $("#nameBucket").val();
+		   console.log("Bucket Name " + bucketName);
+			$.ajax({
+				url : "/createNewBucket/" + bucketName,
+				success: function(){
+					           location.reload(); // then reload the page
+				}
+			})
+
+		   //stop form submission
+			event.preventDefault();
+		});
+};
+
+
 function loadBuckets(data) {
     if ($("#productTable tbody").length == 0) {
         $("#productTable").append("<tbody></tbody>");
@@ -14,10 +45,11 @@ function loadBuckets(data) {
             var creationDate = new Date(data.creationDate);
             $("#productTable tbody").append(
                 `<tr>
-                    <td> <a href="#" onclick="loadObjects('${data.name}')"> ${data.name}</a></td> +
+                    <td> <a class="bn" href="#" onclick="loadObjects('${data.name}')"> ${data.name}</a></td> +
                     <td> ${data.owner.displayName} </td>
                     <td> ${creationDate.toString()} </td>
-                    </tr>`
+                    <td align="center" style="vertical-align: middle;" class="clicked"><span class="link"><img class="imageDeleteBucket" src="images/minus_icon.png" title="delete bucket"></img></span></td>
+                 </tr>`
             );
         });
     } else {
@@ -104,6 +136,9 @@ function init() {
     }).then(function (data) {
         loadBuckets(data)
     }).always(() => $('#productTable tbody').loading('stop'))
+   
+	removeBucket();
+    
 };
 
 

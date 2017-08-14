@@ -54,3 +54,29 @@
     margin-left: auto;
 }
 
+.newBucketContainer{
+    display: inline-block;
+    float: right;
+    padding: 25px 18px;
+}
+
+.imageNewBucket{
+	width: 30px;
+}
+
+.deleteBucketContaier{
+	text-align: center; 
+	vertical-align: middle;
+}
+
+.imageDeleteBucket{
+	width: 30px;
+}
+
+span.link {
+    cursor:pointer;
+}
+
+h2{
+	display: inline-block;
+}

@@ -36,7 +36,6 @@ public final class AmazonS3Service {
 
     }
 
-
     public static AmazonS3Service getInstance() {
         return amazonS3Service;
     }

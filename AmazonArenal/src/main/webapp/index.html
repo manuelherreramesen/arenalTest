@@ -1,9 +1,9 @@
 <html>
 <title>AWS Example Buckets</title>
 
-<link href="/styles/bootstrap.min.css" rel="stylesheet"/>
-<link href="/styles/jquery.loading.min.css" rel="stylesheet"/>
-<link href="/styles/arenal.css" rel="stylesheet"/>
+<link href="/styles/bootstrap.min.css" rel="stylesheet" />
+<link href="/styles/jquery.loading.min.css" rel="stylesheet" />
+<link href="/styles/arenal.css" rel="stylesheet" />
 
 <script src="/lib/jquery-1.11.0.min.js"></script>
 <script src="/lib/bootstrap.min.js"></script>
@@ -13,78 +13,108 @@
 
 <body>
 
-<div class="bs-docs-header" id="content" tabindex="-1">
-    <div class="container"><h1>AWS Example Buckets</h1>
-        <p>Basic example about how to load buckets files.</p>
-    </div>
-</div>
+	<div class="bs-docs-header" id="content" tabindex="-1">
+		<div class="container">
+			<h1>AWS Example Buckets</h1>
+			<p>Basic example about how to load buckets files.</p>
+		</div>
+	</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">
-            <h2>Buckets</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <table id="productTable"
-                   class="table table-bordered table-condensed table-striped">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Owner</th>
-                    <th>Creation Date</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td colspan="3"> No Data</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <h2>Files in Bucket Chosen</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <table id="objectTable"
-                   class="table table-bordered table-condensed table-striped">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Bucket</th>
-                    <th>Creation Date</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td colspan="3"> No Data</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<h2>Buckets</h2>
+				<span class="newBucketContainer"><a href="#"
+					onclick="createBucket()"><img class="imageNewBucket"
+						src="images/blue-plus-icon.png" title="Create new bucket"></img></a></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<table id="productTable"
+					class="table table-bordered table-condensed table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Owner</th>
+							<th>Creation Date</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="3">No Data</td>
 
-<div class="modal fade" id="objectModal" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
-            </div>
-            <div class="modal-body text-center">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<h2>Files in Bucket Chosen</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<table id="objectTable"
+					class="table table-bordered table-condensed table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Bucket</th>
+							<th>Creation Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="3">No Data</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 
-    </div>
-</div>
+	<div class="modal fade" id="objectModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Modal Header</h4>
+				</div>
+				<div class="modal-body text-center"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="modalNewBucket" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Create New Bucket</h4>
+				</div>
+				<div class="modal-body">
+					<form id="modalNewBucketForm" action="">
+						<label for="name">Name</label> 
+						<input type="text" id="nameBucket" name="name">
+						<input type="submit" id="addBucketButton" name="Add" value="Add"/>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
 </body>
 </html>
